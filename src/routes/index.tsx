@@ -282,8 +282,7 @@ function Origen() {
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Café directo de fincas del Perú. Cada lata tiene origen trazable — sabes
-            exactamente de dónde viene lo que tomas. No es una marca más, es café hecho por
-            quien lo cultiva.
+            exactamente de dónde viene lo que tomas. Es café hecho por quien lo cultiva.
           </p>
         </div>
       </div>
