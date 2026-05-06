@@ -17,6 +17,8 @@ import {
   MessageCircle,
   Check,
 } from "lucide-react";
+import logoGud from "@/assets/logo-gud.png";
+import canGud from "@/assets/can-gud.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -57,8 +59,9 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="text-base font-medium tracking-tight">
-          Café <span className="text-primary">Gud</span>
+        <a href="#top" className="flex items-center gap-2">
+          <img src={logoGud} alt="Café Gud" className="h-9 w-auto" />
+          <span className="sr-only">Café Gud</span>
         </a>
         <a
           href="#solucion"
@@ -80,29 +83,39 @@ function Hero() {
     { icon: Sparkles, label: "Sin acidez" },
   ];
   return (
-    <section id="top" className="px-5 pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <section id="top" className="px-5 pt-12 pb-20 sm:pt-20 sm:pb-28">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <span className="mb-5 text-xs font-medium tracking-[0.18em] text-muted-foreground">
+        <span className="mb-5 text-xs font-semibold tracking-[0.2em] text-gold">
           CAFÉ DE ESPECIALIDAD PERUANO
         </span>
-        <h1 className="text-[32px] font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+        <h1 className="text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-5xl">
           Amas el café.
           <br />
           <span className="text-primary">Tu cuerpo, no tanto.</span>
         </h1>
         <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
           Café Gud es especialidad peruana, endulzado con{" "}
-          <span className="font-medium text-foreground">alulosa</span>: un azúcar natural
+          <span className="font-semibold text-foreground">alulosa</span>: un azúcar natural
           sin calorías. Energía limpia, buen café, cero culpa.
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-2">
+        <div className="mt-10 mb-2">
+          <img
+            src={canGud}
+            alt="Lata de Café Gud 300ml"
+            width={1024}
+            height={1024}
+            className="mx-auto h-64 w-auto drop-shadow-2xl sm:h-80"
+          />
+        </div>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           {tags.map(({ icon: Icon, label }) => (
             <span
               key={label}
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground"
             >
-              <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2.2} />
+              <Icon className="h-3.5 w-3.5 text-gold" strokeWidth={2.2} />
               {label}
             </span>
           ))}
@@ -239,8 +252,8 @@ function SolutionRow({
       }`}
     >
       {highlight && (
-        <span className="absolute -top-3 left-6 rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold tracking-wider text-primary-foreground">
-          EXCLUSIVO
+        <span className="absolute -top-3 left-6 rounded-full bg-gold px-2.5 py-1 text-[10px] font-semibold tracking-wider text-primary">
+          ÚNICO EN PERÚ
         </span>
       )}
       <div
@@ -269,8 +282,7 @@ function Origen() {
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Café directo de fincas del Perú. Cada lata tiene origen trazable — sabes
-            exactamente de dónde viene lo que tomas. No es una marca más, es café hecho por
-            quien lo cultiva.
+            exactamente de dónde viene lo que tomas. Es café hecho por quien lo cultiva.
           </p>
         </div>
       </div>

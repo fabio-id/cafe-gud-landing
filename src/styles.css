@@ -33,31 +33,36 @@
   --color-ring: var(--ring);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
+  --color-gold: var(--gold);
 }
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(1 0 0);
+  /* Cream background #FAF7F2 */
+  --background: oklch(0.972 0.008 80);
   --foreground: oklch(0.16 0 0);
-  --cream: oklch(0.975 0.008 80);
+  --cream: oklch(0.955 0.012 80);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.16 0 0);
-  --primary: oklch(0.45 0.17 285);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.005 80);
+  /* Deep coffee brown #3E2723 */
+  --primary: oklch(0.28 0.04 40);
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: oklch(0.94 0.012 80);
   --secondary-foreground: oklch(0.16 0 0);
-  --muted: oklch(0.96 0.005 80);
-  --muted-foreground: oklch(0.5 0.01 80);
-  --accent: oklch(0.94 0.03 285);
-  --accent-foreground: oklch(0.45 0.17 285);
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.48 0.015 60);
+  /* Golden accent #D4AF37 */
+  --accent: oklch(0.78 0.13 85);
+  --accent-foreground: oklch(0.25 0.04 60);
+  --gold: oklch(0.74 0.14 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.005 80);
-  --input: oklch(0.92 0.005 80);
-  --ring: oklch(0.45 0.17 285);
-  --warning: oklch(0.96 0.08 90);
+  --border: oklch(0.9 0.01 70);
+  --input: oklch(0.9 0.01 70);
+  --ring: oklch(0.28 0.04 40);
+  --warning: oklch(0.95 0.09 90);
   --warning-foreground: oklch(0.35 0.08 60);
 }
 
