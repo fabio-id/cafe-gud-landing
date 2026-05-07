@@ -5,7 +5,7 @@ import {
   Ban,
   MapPin,
   Sparkles,
-  
+  Bolt,
   Coffee,
   Store,
   Award,
