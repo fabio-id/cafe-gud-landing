@@ -252,6 +252,20 @@ function Solucion() {
   );
 }
 
+function Pill({ children, highlight }: { children: React.ReactNode; highlight?: boolean }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium sm:text-sm ${
+        highlight
+          ? "bg-primary text-primary-foreground"
+          : "border border-border bg-background text-foreground"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
+
 function StatBlock({ number, label }: { number: string; label: string }) {
   return (
     <div className="px-4 py-6 text-center sm:py-8">
