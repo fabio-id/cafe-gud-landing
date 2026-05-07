@@ -5,7 +5,7 @@ import {
   Ban,
   MapPin,
   Sparkles,
-  TrendingUp,
+  
   Coffee,
   Store,
   Award,
