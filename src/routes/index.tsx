@@ -5,7 +5,7 @@ import {
   Ban,
   MapPin,
   Sparkles,
-  
+  Bolt,
   Coffee,
   Store,
   Award,
@@ -77,10 +77,11 @@ function Navbar() {
 /* ---------- HERO ---------- */
 function Hero() {
   const tags = [
+    { icon: Bolt, label: "Cafeína natural" },
     { icon: Zap, label: "Energía limpia" },
     { icon: Ban, label: "Cero calorías" },
     { icon: MapPin, label: "Origen trazable" },
-    { icon: Sparkles, label: "Sin acidez" },
+    { icon: ShieldCheck, label: "Sin acidez" },
   ];
   return (
     <section id="top" className="px-5 pt-12 pb-20 sm:pt-20 sm:pb-28">
@@ -189,6 +190,21 @@ function Solucion() {
     <section id="solucion" className="bg-cream px-5 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl">
         <SectionHeader eyebrow="LA SOLUCIÓN" title="Así es diferente Café Gud." />
+
+        {/* Tagline equation */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base">
+          <Pill>Café de especialidad</Pill>
+          <span className="font-display text-xl text-muted-foreground">+</span>
+          <Pill>alulosa</Pill>
+          <span className="font-display text-xl text-muted-foreground">=</span>
+          <Pill highlight>
+            <Bolt className="h-4 w-4" strokeWidth={2.4} />
+            cafeína limpia
+          </Pill>
+          <Pill>sabor real</Pill>
+          <Pill>cero calorías</Pill>
+        </div>
+
         <div className="mt-12 space-y-6">
           <SolutionRow
             icon={Award}
@@ -211,21 +227,51 @@ function Solucion() {
             }
           />
           <SolutionRow
-            icon={Zap}
-            title="Energía limpia, sin problemas de acidez"
+            icon={Bolt}
+            highlight
+            title="Cafeína natural, energía sin bajón"
             text={
               <>
-                Cafeína que mantiene tu energía estable toda la mañana, sin temblor, sin bajón
-                y sin ardor de estómago.
-                <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-xs font-medium text-accent-foreground">
-                  <ShieldCheck className="h-3.5 w-3.5" /> Sin acidez
-                </span>
+                <strong className="font-semibold text-primary">Cafeína de café de especialidad real</strong>,
+                no concentrados ni químicos. Te mantiene activo toda la mañana sin temblor,{" "}
+                <strong className="font-semibold text-primary">sin bajón</strong> y{" "}
+                <strong className="font-semibold text-primary">sin acidez</strong>.
               </>
             }
           />
         </div>
+
+        {/* Stat strip */}
+        <div className="mt-12 grid grid-cols-1 divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <StatBlock number="0" label="calorías por lata" />
+          <StatBlock number="+80mg" label="cafeína natural" />
+          <StatBlock number="100%" label="café peruano trazable" />
+        </div>
       </div>
     </section>
+  );
+}
+
+function Pill({ children, highlight }: { children: React.ReactNode; highlight?: boolean }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium sm:text-sm ${
+        highlight
+          ? "bg-primary text-primary-foreground"
+          : "border border-border bg-background text-foreground"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
+
+function StatBlock({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="px-4 py-6 text-center sm:py-8">
+      <div className="text-4xl font-semibold tracking-tight text-primary sm:text-5xl">{number}</div>
+      <div className="mt-2 text-xs uppercase tracking-[0.15em] text-muted-foreground">{label}</div>
+    </div>
   );
 }
 
