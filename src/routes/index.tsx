@@ -77,10 +77,11 @@ function Navbar() {
 /* ---------- HERO ---------- */
 function Hero() {
   const tags = [
+    { icon: Bolt, label: "Cafeína natural" },
     { icon: Zap, label: "Energía limpia" },
     { icon: Ban, label: "Cero calorías" },
     { icon: MapPin, label: "Origen trazable" },
-    { icon: Sparkles, label: "Sin acidez" },
+    { icon: ShieldCheck, label: "Sin acidez" },
   ];
   return (
     <section id="top" className="px-5 pt-12 pb-20 sm:pt-20 sm:pb-28">
