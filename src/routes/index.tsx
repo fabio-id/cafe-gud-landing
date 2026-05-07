@@ -212,21 +212,37 @@ function Solucion() {
             }
           />
           <SolutionRow
-            icon={Zap}
-            title="Energía limpia, sin problemas de acidez"
+            icon={Bolt}
+            highlight
+            title="Cafeína natural, energía sin bajón"
             text={
               <>
-                Cafeína que mantiene tu energía estable toda la mañana, sin temblor, sin bajón
-                y sin ardor de estómago.
-                <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-xs font-medium text-accent-foreground">
-                  <ShieldCheck className="h-3.5 w-3.5" /> Sin acidez
-                </span>
+                <strong className="font-semibold text-primary">Cafeína de café de especialidad real</strong>,
+                no concentrados ni químicos. Te mantiene activo toda la mañana sin temblor,{" "}
+                <strong className="font-semibold text-primary">sin bajón</strong> y{" "}
+                <strong className="font-semibold text-primary">sin acidez</strong>.
               </>
             }
           />
         </div>
+
+        {/* Stat strip */}
+        <div className="mt-12 grid grid-cols-1 divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <StatBlock number="0" label="calorías por lata" />
+          <StatBlock number="+80mg" label="cafeína natural" />
+          <StatBlock number="100%" label="café peruano trazable" />
+        </div>
       </div>
     </section>
+  );
+}
+
+function StatBlock({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="px-4 py-6 text-center sm:py-8">
+      <div className="text-4xl font-semibold tracking-tight text-primary sm:text-5xl">{number}</div>
+      <div className="mt-2 text-xs uppercase tracking-[0.15em] text-muted-foreground">{label}</div>
+    </div>
   );
 }
 
