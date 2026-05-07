@@ -190,6 +190,21 @@ function Solucion() {
     <section id="solucion" className="bg-cream px-5 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl">
         <SectionHeader eyebrow="LA SOLUCIÓN" title="Así es diferente Café Gud." />
+
+        {/* Tagline equation */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base">
+          <Pill>Café de especialidad</Pill>
+          <span className="font-display text-xl text-muted-foreground">+</span>
+          <Pill>alulosa</Pill>
+          <span className="font-display text-xl text-muted-foreground">=</span>
+          <Pill highlight>
+            <Bolt className="h-4 w-4" strokeWidth={2.4} />
+            cafeína limpia
+          </Pill>
+          <Pill>sabor real</Pill>
+          <Pill>cero calorías</Pill>
+        </div>
+
         <div className="mt-12 space-y-6">
           <SolutionRow
             icon={Award}
