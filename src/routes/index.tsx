@@ -5,8 +5,8 @@ import {
   Ban,
   MapPin,
   Sparkles,
-  TrendingUp,
-  Frown,
+  
+  Coffee,
   Store,
   Award,
   ShieldCheck,
@@ -150,22 +150,15 @@ function Problema() {
         <SectionHeader eyebrow="EL PROBLEMA" title="Si tomas café todos los días, esto te suena." />
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           <ProblemCard
-            icon={TrendingUp}
-            title="Café con azúcar"
-            text="Glucosa alta, bajón a las 11am y culpa después de cada taza."
+            icon={Coffee}
+            title="Café accesible, pero malo"
+            text="El café del día a día tiene azúcar de mesa, sabor mediocre y te pasa factura: glucosa alta, bajón y culpa después de cada taza."
           />
           <ProblemCard
-            icon={Frown}
-            title="Café negro puro"
-            text="Tendrías que renunciar al sabor que te gusta. No es para todos."
+            icon={Store}
+            title="Café de especialidad, pero caro"
+            text="La calidad que mereces existe — pero a S/15 la taza, en cafeterías, no es opción para todos los días."
           />
-          <div className="sm:col-span-2">
-            <ProblemCard
-              icon={Store}
-              title="Cafetería de especialidad"
-              text="El nivel de calidad que mereces existe — pero a S/15 la taza no es para todos los días."
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -205,13 +198,15 @@ function Solucion() {
           <SolutionRow
             icon={Sparkles}
             highlight
-            title="Endulzado con alulosa — único en Perú"
+            badge="EXCLUSIVO EN PERÚ"
+            title="Endulzado con alulosa"
             text={
               <>
                 La <strong className="font-semibold text-foreground">alulosa</strong> es un azúcar
-                natural complejo que carameliza igual que el azúcar de mesa, pero no tiene
-                calorías significativas y no eleva la glucosa en sangre. Sin regusto raro. Es
-                lo que hace a Café Gud diferente a cualquier otro café que hayas probado.
+                natural que <strong className="font-semibold text-primary">carameliza</strong> igual
+                que el azúcar de mesa — mismo dulzor, mismas notas tostadas, sin regusto raro.
+                La diferencia: tiene <strong className="font-semibold text-primary">cero calorías</strong>{" "}
+                y no eleva la glucosa en sangre. Es lo que hace a Café Gud único.
               </>
             }
           />
@@ -239,11 +234,13 @@ function SolutionRow({
   title,
   text,
   highlight,
+  badge,
 }: {
   icon: any;
   title: string;
   text: React.ReactNode;
   highlight?: boolean;
+  badge?: string;
 }) {
   return (
     <div
@@ -259,6 +256,11 @@ function SolutionRow({
         <Icon className="h-6 w-6" strokeWidth={2} />
       </div>
       <div className="flex-1">
+        {badge && (
+          <span className="mb-2 inline-block rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-primary-foreground">
+            {badge}
+          </span>
+        )}
         <h3 className="text-lg font-medium">{title}</h3>
         <div className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</div>
       </div>
@@ -277,7 +279,7 @@ function Origen() {
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Café directo de fincas del Perú. Cada lata tiene origen trazable — sabes
-            exactamente de dónde viene lo que tomas. Es café hecho por quien lo cultiva.
+            exactamente de dónde viene lo que tomas.
           </p>
         </div>
       </div>
