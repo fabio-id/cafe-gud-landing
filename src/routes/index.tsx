@@ -182,10 +182,10 @@ function ProblemCard({
   text: string;
 }) {
   return (
-    <div className="rounded-2xl border border-border bg-background p-6">
-      <Icon className="h-6 w-6 text-muted-foreground" strokeWidth={1.8} />
-      <h3 className="mt-4 text-lg font-medium">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+    <div className="rounded-2xl border border-border bg-background p-7 sm:p-8">
+      <Icon className="h-7 w-7 text-gold" strokeWidth={2} />
+      <h3 className="mt-4 text-xl font-semibold sm:text-2xl">{title}</h3>
+      <p className="mt-3 text-lg font-medium leading-snug text-foreground sm:text-xl">{text}</p>
     </div>
   );
 }
@@ -251,11 +251,6 @@ function SolutionRow({
         highlight ? "border-2 border-primary" : "border border-border"
       }`}
     >
-      {highlight && (
-        <span className="absolute -top-3 left-6 rounded-full bg-gold px-2.5 py-1 text-[10px] font-semibold tracking-wider text-primary">
-          ÚNICO EN PERÚ
-        </span>
-      )}
       <div
         className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
           highlight ? "bg-primary text-primary-foreground" : "bg-accent text-primary"
